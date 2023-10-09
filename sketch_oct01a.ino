@@ -17,22 +17,8 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) {
     char input = Serial.read();  
-    if(input == 'f') {
-      const char text[] = "Hello World";  
-      radio.write(&text, sizeof(text));
-    }
-    if(input == 'b') {
-      const char text[] = "Hello Worlf";  
-      radio.write(&text, sizeof(text));
-    }
-    if(input == 'l') {
-      const char text[] = "Hello Worlg";  
-      radio.write(&text, sizeof(text));
-    }
-    if(input == 'r') {
-      const char text[] = "Hello Worlh";  
-      radio.write(&text, sizeof(text));
-    }
+    radio.write(&input, sizeof(input));
+    Serial.println(input);  
   }
 
 }
