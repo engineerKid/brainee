@@ -86,29 +86,18 @@ void loop() {
   if (radio.available()) {
     char text[32] = "";
     radio.read(&text, sizeof(text));
-    Serial.println(text);
-    if (strcmp(text, "Hello World") == 0) {
+    if(strcmp(text, "f") == 0){
       forwards();
-      delay(2000);
-      off();
     }
-    if (strcmp(text, "Hello Worlf") == 0) {
-      backwards();
-      delay(2000);
-      off();
-    }
-    if (strcmp(text, "Hello Worlg") == 0) {
+    if(strcmp(text, "l") == 0){
       left();
-      delay(2000);
-      off();
     }
-    if (strcmp(text, "Hello Worlh") == 0) {
+    if(strcmp(text, "r") == 0){
       right();
-      delay(2000);
-      off();
     }
-    
+    if(strcmp(text, "b") == 0){
+      backwards();
+    }
   }
-
 
 }
